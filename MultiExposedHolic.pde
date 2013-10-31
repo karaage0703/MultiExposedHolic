@@ -27,15 +27,15 @@ float[] lut_s = new float[256];
 float[] lut_m = new float[256];
 
 //Window Size
-int view_width=1024, view_height=768;
+int view_width=800, view_height=600;
 int view_swidth0, view_sheight0;
 int view_swidth1, view_sheight1;
 
 int size_sx = 160;
 int size_sy = 120;
 
-int size_x = 1024;
-int size_y = 768;
+int size_x = 800;
+int size_y = 600;
 
 
 void TuneImage(){
