@@ -27,7 +27,7 @@ float[] lut_s = new float[256];
 float[] lut_m = new float[256];
 
 //Window Size
-int view_width=800, view_height=600;
+int view_width=1024, view_height=768;
 int view_swidth0, view_sheight0;
 int view_swidth1, view_sheight1;
 
@@ -35,7 +35,7 @@ int size_sx = 160;
 int size_sy = 120;
 
 int size_x = 800;
-int size_y = 600;
+int size_y = 640;
 
 
 void TuneImage(){
@@ -151,6 +151,32 @@ void ImageMultiExposed(){
         writeimg.pixels[i] = color(r,g,b);
       }
       break;
+    case 4: // Lighten
+      for(int i = 0; i < img0.width*img0.height; i++){
+        color tmp_color0 = tuned_img0.pixels[i];
+        color tmp_color1 = tuned_img1.pixels[i];
+        int r, g, b;
+        if((int)red(tmp_color0) >  (int)red(tmp_color1)){
+          r =(int)red(tmp_color0);
+        }else{
+          r =(int)red(tmp_color1);
+        }
+
+        if((int)green(tmp_color0) >  (int)green(tmp_color1)){
+          g =(int)green(tmp_color0);
+        }else{
+          g =(int)green(tmp_color1);
+        }
+
+        if((int)blue(tmp_color0) >  (int)blue(tmp_color1)){
+          b =(int)blue(tmp_color0);
+        }else{
+          b =(int)blue(tmp_color1);
+        }
+
+        writeimg.pixels[i] = color(r,g,b);
+      }
+      break;
     default:
       break;
   }
@@ -209,7 +235,7 @@ void setup(){
 
   l = cp5.addListBox("myList")
          .setPosition(40, 250)
-         .setSize(120, 120)
+         .setSize(120, 180)
          .setItemHeight(39)
          .setBarHeight(20)
          .setColorBackground(color(40, 128))
@@ -230,7 +256,8 @@ void setup(){
   lbi.setColorBackground(0xffff0000);
   lbi = l.addItem("Overlay", 2);
   lbi.setColorBackground(0xffff0000);
-
+  lbi = l.addItem("Lighten", 3);
+  lbi.setColorBackground(0xffff0000);
 
   cp5.addButton("Save Image")
      .setPosition(40,500)
