@@ -29,7 +29,7 @@ Source image 2
 If you want to create iconset, execute below command.
 
 ~~~~
-$ iconutil -c icns sketch.icons
+$ iconutil -c icns sketch.iconset
 ~~~~
 
 
