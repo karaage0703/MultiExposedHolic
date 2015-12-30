@@ -24,7 +24,7 @@ Source image 2
 
 
 
-# For MAC user
+# Creating iconset (only for MAC user)
 
 If you want to create iconset, execute below command.
 
