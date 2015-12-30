@@ -1,6 +1,6 @@
 
 
-# Multi Exposed Holic
+# Multiple Exposed Holic
 
 For Processing 1.xx (Processing 1.5.1 is recommended)
 
